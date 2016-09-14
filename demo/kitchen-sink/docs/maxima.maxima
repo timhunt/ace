@@ -1,0 +1,7 @@
+/* Example Maxima code. */
+a_variable:3+2*%i$
+a_function(ex) := block([ret,seps],
+  ret:tut_expand_all_levels(ex),
+  ret:append(ret,[ [["Hence"],[],[]], [[ex],["="],[ev(expand(ex),simp)]] ]),
+  display_steps(ret)
+)$
